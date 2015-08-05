@@ -29,16 +29,29 @@ include('./parts/connect.php');
     <table style="width: 100%" cellspacing="0" cellpadding="0">
         <tr id="header" >
             <td colspan="2">
-                Список статей
-                <?php /* include './parts/header.php' */ ?>
+                Добавить статью
             </td>
         </tr>
         <tr>
             <td id="lf">
                 <?php include './parts/menu.php' ?>
             </td>
-            <td id="content">
-                <?php include './parts/content.php' ?>
+            <td id="content" style="text-align: center">
+
+                <form method="post" action="./parts/add.php">
+                    <label></label>
+                    Заголовок статьи:<br>
+                    <input name="title" type="text" size="60" >
+                    <br><br>
+                    Содержание статьи:<br>
+                    <textarea name="full_ar" cols="62" rows="10"></textarea>
+                    <br><br>
+                    Теги к статье:<br>
+                    <textarea name="tegs" cols="62" rows="1"></textarea>
+                    <br><br>
+                    <input name="submit" type="submit" value="Отправить">
+                </form>
+                <?php /* include './parts/add.php' */ ?>
             </td>
         </tr>
         <tr id="botter">

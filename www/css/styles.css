@@ -1,0 +1,32 @@
+* {
+    margin: 0; padding: 0;
+}
+
+#header, #botter {
+    background-color: darkblue;
+    height: 150px;
+    color: azure;
+
+}
+
+#content {
+    padding-left: 20px;
+    background-color: azure;
+    /*min-height: 600px;*/
+    height: 500px;
+}
+
+#lf {
+    background-color:dodgerblue;
+    width: 200px;
+}
+
+#menu-left {
+    border-width: 2px;
+    width: 100%;
+    margin: 10px;
+    padding: 5px;
+    color: darkblue;
+    text-align: center;
+    vertical-align: top;
+}
