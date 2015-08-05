@@ -2,7 +2,7 @@
 session_start();
 include 'connect.php';
 
-var_dump($_POST);
+// var_dump($_POST);
 
 if (isset($_POST['title'])) {
     $title = $_POST['title'];
@@ -30,8 +30,9 @@ $short = substr($full_ar, 0, 350) . "...";
 
 /*
 Добавить обработку тегов из строки в массив и добавление тегов в базу данных
-
- die;
 */
-$result2 = @mysql_query ("INSERT INTO articles (title_ar, short_ar, full_ar) VALUES ('$title', '$short', '$full_ar')") or die("(!) Ошибка в запросе: " . mysql_error());
+
+$result2 = mysql_query ("INSERT INTO articles (title_ar, short_ar, full_ar) VALUES ('$title', '$short', '$full_ar')")
+    or die("(!) Ошибка в запросе: " . mysql_error());
+
 echo 'OK. Article added.';
