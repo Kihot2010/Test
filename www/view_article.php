@@ -1,5 +1,7 @@
 <?php
 
+include './parts/connect.php';
+$id = $_GET['id'];
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -24,7 +26,33 @@
                 <?php include './parts/menu.php' ?>
             </td>
             <td id="content">
-                <?php include './parts/content.php' ?>
+                <?php
+
+
+                $res = mysql_query("SELECT * FROM articles WHERE id_article='$id '",$db);
+                $myrow = mysql_fetch_array($res);
+
+                printf("
+                <table>
+                    <td>
+                        <tr style = 'background-color: bisque; font-size: 15px;'>
+                            <h2>%s</h2>
+                        </tr>
+
+                        <tr>
+                            <p>%s</p>
+                        </tr>
+                    </td>
+                </table>",
+                $myrow["title_ar"], $myrow["full_ar"]
+
+                );
+
+
+
+
+
+                ?>
             </td>
         </tr>
         <tr id="botter">

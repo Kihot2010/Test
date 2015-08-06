@@ -8,7 +8,7 @@ include('./parts/connect.php');
  *  1. построить схему сайта - СДЕЛАНО
  *  2. добавить меню(СДЕЛАНО) и ссылки на:
  *  2.0. Главную (СДЕЛАНО)
- *  2.1. Добавить новость
+ *  2.1. Добавить новость (СДЕЛАНО)
  *  2.2. Редактировать новость
  *  2.3. Удалить новость
  *  3. Добавить отображение тегов к статье, с возможностью выборки статей по тегам
@@ -26,24 +26,23 @@ include('./parts/connect.php');
 
 <body>
 <div>
-    <table style="width: 100%" cellspacing="0" cellpadding="0">
+    <table style="width: 960px" cellspacing="0" cellpadding="0">
         <tr id="header" >
             <td colspan="2">
-                Список статей
-                <?php /* include './parts/header.php' */ ?>
+                <h1>Список статей</h1>
             </td>
         </tr>
         <tr>
-            <td id="lf">
-                <?php include './parts/menu.php' ?>
+            <td id="lf" style="">
+                <?php include 'parts/menu.php' ?>
             </td>
             <td id="content">
-                <?php include './parts/content.php' ?>
+                <?php include 'parts/content.php' ?>
             </td>
         </tr>
         <tr id="botter">
             <td colspan="2">
-                <?php include './parts/botter.php' ?>
+                <?php include 'parts/botter.php' ?>
             </td>
         </tr>
     </table>

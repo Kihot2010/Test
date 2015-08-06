@@ -29,7 +29,7 @@ include('./parts/connect.php');
     <table style="width: 100%" cellspacing="0" cellpadding="0">
         <tr id="header" >
             <td colspan="2">
-                Добавить статью
+                <h1>Добавить статью</h1>
             </td>
         </tr>
         <tr>

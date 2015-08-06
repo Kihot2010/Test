@@ -1,5 +1,5 @@
 * {
-    margin: 0; padding: 0;
+    margin: 0 auto; padding: 0;
 }
 
 #header, #botter {
@@ -14,19 +14,32 @@
     background-color: azure;
     /*min-height: 600px;*/
     height: 500px;
+    vertical-align: top;
 }
 
 #lf {
-    background-color:dodgerblue;
-    width: 200px;
+    border: 1px solid gray;
+    background-color: dodgerblue;
+    width: 220px;
+    vertical-align: top;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
 }
 
 #menu-left {
     border-width: 2px;
     width: 100%;
-    margin: 10px;
+    margin: 10px 5px 10px 10px;
     padding: 5px;
     color: darkblue;
     text-align: center;
-    vertical-align: top;
+}
+
+#menu-left a {
+    text-decoration: none;
+}
+
+#menu-left a:hover {
+    text-decoration: underline;
+    color: MenuText;
 }
