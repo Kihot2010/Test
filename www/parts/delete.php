@@ -1,18 +1,12 @@
 <?php
-
 session_start();
-
-include('./parts/connect.php');
-
-/* 05/08/2015 - 02-50
- *  1. построить схему сайта - СДЕЛАНО
- *  2. добавить меню(СДЕЛАНО) и ссылки на:
- *  2.0. Главную (СДЕЛАНО)
- *  2.1. Добавить новость (СДЕЛАНО)
- *  2.2. Редактировать новость
- *  2.3. Удалить новость
- *  3. Добавить отображение тегов к статье, с возможностью выборки статей по тегам
- */
+include('../parts/connect.php');
+if (isset ($_GET['id'])) {
+    $id = $_GET['id'];
+} else {
+    echo "Ошибка удаления! <a href='../index.php'>Вернуться на главную страницу сайта</a>";
+    die;
+}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -21,7 +15,7 @@ include('./parts/connect.php');
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Новости</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
 </head>
 
 <body>
@@ -34,15 +28,18 @@ include('./parts/connect.php');
         </tr>
         <tr>
             <td id="lf" style="">
-                <?php include 'parts/menu.php' ?>
+                <?php include '../parts/menu.php' ?>
             </td>
             <td id="content">
-                <?php include 'parts/content.php' ?>
+                <?php
+                    //var_dump($_GET['id']);
+                    $rez = mysql_query ("DELETE FROM articles WHERE id_article = '$id'", $db );
+                ?>
             </td>
         </tr>
         <tr id="botter">
             <td colspan="2">
-                <?php include 'parts/botter.php' ?>
+                <?php include '../parts/botter.php' ?>
             </td>
         </tr>
     </table>

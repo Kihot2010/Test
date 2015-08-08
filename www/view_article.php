@@ -1,6 +1,6 @@
 <?php
 
-include './blocks/connect.php';
+include './parts/connect.php';
 $id = $_GET['id'];
 ?>
 
@@ -18,12 +18,12 @@ $id = $_GET['id'];
     <table style="width: 960px" cellspacing="0" cellpadding="0">
         <tr id="header" >
             <td colspan="2">
-                <?php include './blocks/header.php' ?>
+                <?php include './parts/header.php' ?>
             </td>
         </tr>
         <tr>
             <td id="lf">
-                <?php include './blocks/menu.php' ?>
+                <?php include './parts/menu.php' ?>
             </td>
             <td id="content">
                 <?php
@@ -31,6 +31,10 @@ $id = $_GET['id'];
 
                 $res = mysql_query("SELECT * FROM articles WHERE id_article='$id '", $db);
                 $myrow = mysql_fetch_array($res);
+
+                $l_del =  "./parts/delete.php?id=" . $id;
+
+                //var_dump($l_del);
 
                 printf("
                 <table>
@@ -43,24 +47,30 @@ $id = $_GET['id'];
                             <p>%s</p>
                         </tr>
                         <tr>
-                            <br>
-                            <form method='post' action='./blocks/delete.php'>
-                                 <input name='DeleteArticle' type='submit' value='Удалить новость' />
-                            </form>
-                            <form method='post' action='./blocks/edit.php'>
-                                <input name='EditArticle' type='submit' value='Редактировать новость' />
-                            </form>
+                            &nbsp;
                         </tr>
                     </td>
                 </table>",
                 $myrow["title_ar"], $myrow["full_ar"]
                 );
+
+               echo "<a href=" . $l_del . ">Удалить новость</a>";
+
+
+                /*
+                echo "<form method='get' action='" . $l_del . "'/>";
+                echo "<input name='DeleteArticle' type='submit' value='Удалить новость'" . " />";
+                echo "</" . "form>";
+                */
+                echo "<form method='post' action='./parts/edit.php'" . ">";
+                echo "<input name='EditArticle' type='submit' value='Редактировать новость'" . "/>";
+                echo "</" . "form>";
                 ?>
             </td>
         </tr>
         <tr id="botter">
             <td colspan="2">
-                <?php include './blocks/botter.php' ?>
+                <?php include './parts/botter.php' ?>
             </td>
         </tr>
     </table>
