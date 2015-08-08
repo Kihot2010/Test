@@ -17,6 +17,16 @@
     vertical-align: top;
 }
 
+#content a {
+    text-decoration: none;
+    background-color: gold;
+}
+
+#content a:hover {
+    text-decoration: underline;
+    color: MenuText;
+}
+
 #lf {
     border: 1px solid gray;
     background-color: dodgerblue;
@@ -43,3 +53,4 @@
     text-decoration: underline;
     color: MenuText;
 }
+

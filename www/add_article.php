@@ -2,7 +2,7 @@
 
 session_start();
 
-include('./parts/connect.php');
+include('./blocks/connect.php');
 
 /* 05/08/2015 - 02-50
  *  1. построить схему сайта - СДЕЛАНО
@@ -20,7 +20,7 @@ include('./parts/connect.php');
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Без названия 1</title>
+    <title>Добавить статью</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head>
 
@@ -34,11 +34,11 @@ include('./parts/connect.php');
         </tr>
         <tr>
             <td id="lf">
-                <?php include './parts/menu.php' ?>
+                <?php include './blocks/menu.php' ?>
             </td>
             <td id="content" style="text-align: center">
 
-                <form method="post" action="./parts/add.php">
+                <form method="post" action="blocks/add.php">
                     <label></label>
                     Заголовок статьи:<br>
                     <input name="title" type="text" size="60" >
@@ -51,12 +51,12 @@ include('./parts/connect.php');
                     <br><br>
                     <input name="submit" type="submit" value="Отправить">
                 </form>
-                <?php /* include './parts/add.php' */ ?>
+                <?php /* include './blocks/add.php' */ ?>
             </td>
         </tr>
         <tr id="botter">
             <td colspan="2">
-                <?php include './parts/botter.php' ?>
+                <?php include './blocks/botter.php' ?>
             </td>
         </tr>
     </table>
