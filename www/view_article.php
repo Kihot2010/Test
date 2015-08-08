@@ -44,7 +44,9 @@ $id = $_GET['id'];
                         </tr>
 
                         <tr>
-                            <p>%s</p>
+                            <p>
+                            %s
+                            </p>
                         </tr>
                         <tr>
                             &nbsp;
