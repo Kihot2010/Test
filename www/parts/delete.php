@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('../parts/connect.php');
+
 if (isset ($_GET['id'])) {
     $id = $_GET['id'];
 } else {
@@ -32,8 +33,8 @@ if (isset ($_GET['id'])) {
             </td>
             <td id="content">
                 <?php
-                    //var_dump($_GET['id']);
                     $rez = mysql_query ("DELETE FROM articles WHERE id_article = '$id'", $db );
+                    echo "OK. Статья удалена!. <br />Вернуться&nbsp;<a href='../index.php'>на главную страницу</a>";
                 ?>
             </td>
         </tr>

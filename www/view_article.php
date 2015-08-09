@@ -28,13 +28,10 @@ $id = $_GET['id'];
             <td id="content">
                 <?php
 
-
                 $res = mysql_query("SELECT * FROM articles WHERE id_article='$id '", $db);
                 $myrow = mysql_fetch_array($res);
 
                 $l_del =  "./parts/delete.php?id=" . $id;
-
-                //var_dump($l_del);
 
                 printf("
                 <table>
@@ -56,14 +53,7 @@ $id = $_GET['id'];
                 $myrow["title_ar"], $myrow["full_ar"]
                 );
 
-               echo "<a href=" . $l_del . ">Удалить новость</a>";
-
-
-                /*
-                echo "<form method='get' action='" . $l_del . "'/>";
-                echo "<input name='DeleteArticle' type='submit' value='Удалить новость'" . " />";
-                echo "</" . "form>";
-                */
+                echo "<a href=" . $l_del . ">Удалить новость</a> ВНИМАНИЕ! Новость будет удалена без предупреждения!!!";
                 echo "<form method='post' action='./parts/edit.php'" . ">";
                 echo "<input name='EditArticle' type='submit' value='Редактировать новость'" . "/>";
                 echo "</" . "form>";
