@@ -42,7 +42,7 @@ $id = $_GET['id'];
                         </tr>
 
                         <tr>
-                            <p>
+                            <p style='padding-right: 10px; padding-left: 10px;'>
                             %s
                             </p>
                         </tr>

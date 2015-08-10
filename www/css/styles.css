@@ -2,6 +2,10 @@
     margin: 0 auto; padding: 0;
 }
 
+body {
+    width: 960px;
+}
+
 #header, #botter {
     background-color: darkblue;
     height: 150px;
@@ -12,7 +16,6 @@
 #content {
     padding-left: 20px;
     background-color: azure;
-    /*min-height: 600px;*/
     height: 500px;
     vertical-align: top;
 }
@@ -28,7 +31,6 @@
 }
 
 #lf {
-    border: 1px solid gray;
     background-color: dodgerblue;
     width: 220px;
     vertical-align: top;
@@ -36,8 +38,13 @@
     font-size: 13px;
 }
 
+.menu-row {
+    border: 1px solid gray;
+}
+
 #menu-left {
-    border-width: 2px;
+
+    /*border-width: 2px;*/
     width: 100%;
     margin: 10px 5px 10px 10px;
     padding: 5px;

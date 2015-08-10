@@ -19,13 +19,13 @@ $myrow = mysql_fetch_array($result);
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Редактировать новость</title>
+    <title>Редактирование статьи:</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
 </head>
 
 <body>
 <div>
-    <table style="width: 100%" cellspacing="0" cellpadding="0">
+    <table style="width: 960px" cellspacing="0" cellpadding="0">
         <tr id="header" >
             <td colspan="2">
                 <h2><?php echo "Редактировать новость: ". $myrow['titel_ar']; ?></h2>
@@ -38,14 +38,16 @@ $myrow = mysql_fetch_array($result);
             <td id="content" style="text-align: center">
 
                 <form method="post" action="../parts/update.php">
+                    <?php echo "<input value='". $id . "' name='id' type='hidden'>";?>
+                    <br>
                     Заголовок статьи:<br>
-                    <?php echo "<input value=" . $myrow['title_ar'] . " name='title' type='text'>";?>
+                    <?php echo "<input value='" . $myrow['title_ar'] . "' name='title' type='text' size='62'>";?>
                     <br><br>
                     <label>Содержание статьи:<br>
                     <?php  echo "<textarea name='full_ar' cols='62' rows='15'>".$myrow['full_ar']."</textarea></label>";?>
                     <br><br>
                     <label>Теги к статье:<br>
-                    <textarea name="tegs" cols="62" rows="1"></textarea></label>
+                    <textarea name="tegs" cols="62" rows="1" ></textarea></label>
                     <br><br>
                     <input name="submit" type="submit" value="Отредактировать новость">
                 </form>
