@@ -2,6 +2,7 @@
 
 include './parts/connect.php';
 $id = $_GET['id'];
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -27,11 +28,11 @@ $id = $_GET['id'];
             </td>
             <td id="content">
                 <?php
-
                 $res = mysql_query("SELECT * FROM articles WHERE id_article='$id '", $db);
                 $myrow = mysql_fetch_array($res);
 
-                $l_del =  "./parts/delete.php?id=" . $id;
+                $l_del =  "./parts/delete.php?id=".$id;
+                $l_edt =  "./parts/edit.php?id=".$id;
 
                 printf("
                 <table>
@@ -53,10 +54,15 @@ $id = $_GET['id'];
                 $myrow["title_ar"], $myrow["full_ar"]
                 );
 
-                echo "<a href=" . $l_del . ">Удалить новость</a> ВНИМАНИЕ! Новость будет удалена без предупреждения!!!";
-                echo "<form method='post' action='./parts/edit.php'" . ">";
-                echo "<input name='EditArticle' type='submit' value='Редактировать новость'" . "/>";
-                echo "</" . "form>";
+printf(
+    "<a href=./parts/edit.php?id=%s>Редактировать новость</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href=./parts/delete.php?id=%s>Удалить новость</a><br>",
+    $id, $id
+);
+
+
+                echo "<br><br>";
                 ?>
             </td>
         </tr>
